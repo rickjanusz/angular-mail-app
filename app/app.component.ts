@@ -6,7 +6,7 @@ import 'rxjs/add/operator/filter'
 @Component({
   selector: 'app-root',
   styleUrls: ['app.component.scss'],
-  template: `
+  template: /*html */ `
     <div class="app">
       <header>
         <img src="/img/logo.svg" />

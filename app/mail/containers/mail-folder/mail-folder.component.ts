@@ -9,7 +9,7 @@ import { Mail } from '../../models/mail.interface'
 @Component({
   selector: 'mail-folder',
   styleUrls: ['mail-folder.component.scss'],
-  template: `
+  template: /*html */ `
     <h2>{{ title | async }}</h2>
     <mail-item *ngFor="let message of messages | async" [message]="message">
     </mail-item>

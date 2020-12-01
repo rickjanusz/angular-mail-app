@@ -3,12 +3,9 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'mail-app',
   styleUrls: ['mail-app.component.scss'],
-  template: `
+  template: /*html */ `
     <div class="mail">
-      <router-outlet
-        (activate)="onActivate($event)"
-        (deactivate)="onDeactivate($event)"
-      ></router-outlet>
+      <router-outlet></router-outlet>
     </div>
   `,
 })
