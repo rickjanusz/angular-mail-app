@@ -14,4 +14,7 @@ export class MailService {
       .get(`/api/messages?folder=${folder}`)
       .map((res) => res.json())
   }
+  getMessage(id: string): Observable<Mail> {
+    return this.http.get(`/api/messages/${id}`).map((res) => res.json())
+  }
 }

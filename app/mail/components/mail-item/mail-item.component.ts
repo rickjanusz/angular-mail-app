@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core'
-import { Router } from '@angular/router'
 
 import { Mail } from '../../models/mail.interface'
 
@@ -9,8 +8,7 @@ import { Mail } from '../../models/mail.interface'
   template: /*html */ `
     <a
       class="mail-item"
-      (click)="navigateToMessage()"
-      [routerLink]="['', { outlets: { pane: ['message', message.id] } }]"
+      [routerLink]="['/mail', { outlets: { pane: ['message', message.id] } }]"
       routerLinkActive="active"
     >
       <h3>

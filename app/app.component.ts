@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core'
-import { Router, NavigationEnd } from '@angular/router'
+import { Component } from '@angular/core'
 
 import 'rxjs/add/operator/filter'
 
@@ -15,6 +14,7 @@ import 'rxjs/add/operator/filter'
         <nav>
           <a
             [routerLink]="[
+              '/mail',
               { outlets: { primary: 'folder/inbox', pane: null } }
             ]"
             routerLinkActive="active"
@@ -23,25 +23,20 @@ import 'rxjs/add/operator/filter'
           </a>
           <a
             [routerLink]="[
+              '/mail',
               { outlets: { primary: 'folder/trash', pane: null } }
             ]"
             routerLinkActive="active"
           >
             Trash
           </a>
+          <a [routerLink]="['dashboard']" routerLinkActive="active">
+            Dashboard
+          </a>
         </nav>
-        <mail-app></mail-app>
+        <router-outlet></router-outlet>
       </div>
     </div>
   `,
 })
-export class AppComponent implements OnInit {
-  constructor(private router: Router) {}
-  ngOnInit() {
-    this.router.events
-      .filter((event) => event instanceof NavigationEnd)
-      .subscribe((event) => {
-        console.log(event)
-      })
-  }
-}
+export class AppComponent {}
