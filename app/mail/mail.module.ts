@@ -18,6 +18,11 @@ export const ROUTES: Routes = [
       messages: MailFolderResolve,
     },
   },
+  {
+    path: 'message/:id',
+    component: MailViewComponent,
+    outlet: 'pane',
+  },
 ]
 
 @NgModule({
